@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --forest:   #1B4332;
-  --mid:      #2D6A4F;
-  --moss:     #52B788;
-  --light:    #D8F3DC;
-  --cream:    #F8FDF9;
-  --gold:     #F4A261;
-  --gold-dk:  #E76F51;
-  --dark:     #0D2117;
-  --text:     #1A2E1B;
-  --muted:    #4A6352;
+  --forest:   #2C3E50;
+  --mid:      #34495E;
+  --moss:     #D08C60;
+  --light:    #F4F1EC;
+  --cream:    #F4F1EC;
+  --gold:     #D08C60;
+  --gold-dk:  #B86F49;
+  --dark:     #1F2D3A;
+  --text:     #6B7280;
+  --muted:    #6B7280;
   --white:    #FFFFFF;
-  --border:   #C8E6D0;
+  --border:   #D8D2C9;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -69,8 +69,8 @@ nav {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(82,183,136,.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(244,162,97,.08) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(208,140,96,.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(244,241,236,.1) 0%, transparent 60%);
 }
 .hero-tag {
   display: inline-block;
@@ -78,10 +78,13 @@ nav {
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--moss);
-  border: 1px solid var(--moss);
-  border-radius: 2px;
-  padding: 0.3rem 0.9rem;
+  background: rgba(244,241,236,.08);
+  border: 1px solid rgba(208,140,96,.72);
+  border-radius: 4px;
+  padding: 0.38rem 0.95rem;
   margin-bottom: 2rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12);
+  text-shadow: 0 1px 2px rgba(0,0,0,.32);
 }
 .hero h1 {
   font-family: 'Playfair Display', serif;
@@ -110,6 +113,8 @@ nav {
   font-size: 0.7rem; color: var(--muted);
   letter-spacing: 0.12em; text-transform: uppercase;
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 .hero-scroll::after {
   content: '';
@@ -157,7 +162,7 @@ section { padding: 5rem 0; }
   padding: 1.6rem 2rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 12px rgba(27,67,50,.06);
+  box-shadow: 0 2px 12px rgba(44,62,80,.08);
 }
 .quote-block p {
   font-size: 1.08rem; color: var(--text);
@@ -185,6 +190,11 @@ section { padding: 5rem 0; }
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.stat-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 14px 30px rgba(44,62,80,.18);
 }
 .stat-card.light { background: var(--light); }
 .stat-num {
@@ -231,7 +241,7 @@ section { padding: 5rem 0; }
   position: relative; overflow: hidden;
   transition: transform .2s, box-shadow .2s;
 }
-.tipo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(27,67,50,.1); }
+.tipo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(44,62,80,.12); }
 .tipo-card::before {
   content: ''; position: absolute; top: 0; left: 0;
   width: 4px; height: 100%;
@@ -254,7 +264,7 @@ section { padding: 5rem 0; }
   border-radius: 3px; padding: 0.2rem 0.6rem;
   margin-right: 0.3rem; margin-bottom: 0.3rem;
 }
-.tipo-card.gold .tipo-tag { color: var(--gold-dk); background: #FFF0E8; }
+.tipo-card.gold .tipo-tag { color: var(--gold-dk); background: #F7E4D7; }
 
 /* ─── EXPERIMENTAL BANNER ─── */
 .exp-banner {
@@ -281,16 +291,16 @@ section { padding: 5rem 0; }
 .cual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 .cual-card {
   background: rgba(255,255,255,.07);
-  border: 1px solid rgba(82,183,136,.25);
+  border: 1px solid rgba(208,140,96,.28);
   border-radius: 12px; padding: 1.8rem;
   transition: background .2s, transform .2s;
 }
 .cual-card:hover {
-  background: rgba(82,183,136,.12); transform: translateY(-3px);
+  background: rgba(208,140,96,.14); transform: translateY(-3px);
 }
 .cual-icon {
   width: 44px; height: 44px;
-  background: rgba(82,183,136,.2);
+  background: rgba(208,140,96,.2);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
@@ -302,7 +312,7 @@ section { padding: 5rem 0; }
   margin-bottom: 0.5rem;
 }
 .cual-card p { font-size: 0.88rem; color: var(--light); line-height: 1.65; }
-.cual-card .tipo-tag { color: var(--moss); background: rgba(82,183,136,.15); }
+.cual-card .tipo-tag { color: var(--moss); background: rgba(208,140,96,.16); }
 
 /* ─── DIFERENCIAS ─── */
 #diferencias { background: var(--white); }
@@ -313,7 +323,7 @@ section { padding: 5rem 0; }
   text-transform: uppercase; letter-spacing: 0.1em;
   padding: 1rem 1.2rem;
 }
-.comp-table th:first-child { color: var(--muted); text-align: left; background: #F5F9F6; }
+.comp-table th:first-child { color: var(--muted); text-align: left; background: #F8F6F2; }
 .comp-table th.quant { background: var(--forest); color: var(--white); text-align: center; border-radius: 8px 8px 0 0; }
 .comp-table th.qual { background: var(--gold-dk); color: var(--white); text-align: center; border-radius: 8px 8px 0 0; }
 .comp-table td {
@@ -322,11 +332,11 @@ section { padding: 5rem 0; }
   vertical-align: top; line-height: 1.6;
 }
 .comp-table td:first-child { color: var(--muted); font-weight: 600; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.comp-table td.quant { text-align: center; color: var(--forest); background: rgba(27,67,50,.03); }
-.comp-table td.qual { text-align: center; color: #7B2D0A; background: rgba(231,111,81,.03); }
+.comp-table td.quant { text-align: center; color: var(--forest); background: rgba(44,62,80,.04); }
+.comp-table td.qual { text-align: center; color: var(--gold-dk); background: rgba(208,140,96,.06); }
 .comp-table tr:hover td { background: var(--light); }
 .semejanzas {
-  background: linear-gradient(135deg, var(--light) 0%, #E8F4EA 100%);
+  background: linear-gradient(135deg, var(--light) 0%, #E9E2D8 100%);
   border-radius: 12px; padding: 2rem 2.5rem;
   margin-top: 2.5rem; border: 1px solid var(--border);
 }
@@ -351,7 +361,7 @@ section { padding: 5rem 0; }
   text-align: center;
   transition: transform .2s, box-shadow .2s;
 }
-.inst-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,67,50,.08); }
+.inst-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,62,80,.1); }
 .inst-icon { font-size: 2rem; margin-bottom: 0.7rem; display: block; }
 .inst-card h4 {
   font-family: 'Playfair Display', serif;
@@ -389,7 +399,7 @@ section { padding: 5rem 0; }
   gap: 1.5rem; align-items: start;
   transition: box-shadow .2s;
 }
-.art-card:hover { box-shadow: 0 8px 28px rgba(27,67,50,.1); }
+.art-card:hover { box-shadow: 0 8px 28px rgba(44,62,80,.12); }
 .art-badge {
   width: 52px; height: 52px;
   border-radius: 10px;
@@ -425,7 +435,7 @@ section { padding: 5rem 0; }
   margin-right: 0.3rem;
 }
 .art-design-tag.quant { background: var(--light); color: var(--forest); }
-.art-design-tag.qual  { background: #FFF0E8; color: var(--gold-dk); }
+.art-design-tag.qual  { background: #F7E4D7; color: var(--gold-dk); }
 .art-link {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem; font-weight: 600;
@@ -444,7 +454,7 @@ section { padding: 5rem 0; }
 .vid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .vid-card {
   background: rgba(255,255,255,.07);
-  border: 1px solid rgba(82,183,136,.2);
+  border: 1px solid rgba(208,140,96,.24);
   border-radius: 12px; overflow: hidden;
   transition: transform .2s;
 }
@@ -454,7 +464,7 @@ section { padding: 5rem 0; }
   height: 170px;
   display: flex; align-items: center; justify-content: center;
   font-size: 3rem; position: relative;
-  border-bottom: 1px solid rgba(82,183,136,.15);
+  border-bottom: 1px solid rgba(208,140,96,.2);
 }
 .vid-play {
   width: 60px; height: 60px;
@@ -537,20 +547,30 @@ footer {
 .footer-links a:hover { color: var(--moss); }
 .footer-copy {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem; color: #2D4A35;
+  font-size: 0.7rem; color: #7D858F;
   margin-top: 1.5rem;
 }
 
 /* ─── WIX GUIDE BOX ─── */
 .wix-guide {
-  background: linear-gradient(135deg, #667eea20, #764ba220);
-  border: 2px dashed #667eea;
+  background: linear-gradient(135deg, rgba(44,62,80,.08), rgba(208,140,96,.12));
+  border: 2px dashed var(--gold);
   border-radius: 12px; padding: 2rem;
   margin: 2rem 0;
 }
-.wix-guide h4 { font-family:'DM Sans',sans-serif; color:#4A3F8C; font-size:0.9rem; margin-bottom:0.5rem; }
-.wix-guide p { font-size:0.85rem; color:#4A3F8C; line-height:1.6; }
-.wix-guide code { background:#4A3F8C22; padding:0.1rem 0.4rem; border-radius:3px; font-size:0.8rem; }
+.wix-guide h4 { font-family:'DM Sans',sans-serif; color:var(--forest); font-size:0.9rem; margin-bottom:0.5rem; }
+.wix-guide p { font-size:0.85rem; color:var(--muted); line-height:1.6; }
+.wix-guide code { background:rgba(44,62,80,.1); padding:0.1rem 0.4rem; border-radius:3px; font-size:0.8rem; }
+
+.intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 12px 32px rgba(44,62,80,.14);
+  object-fit: cover;
+}
 
 @media (max-width: 768px) {
   .intro-grid, .tipo-grid, .cual-grid, .inst-grid, .vid-grid { grid-template-columns: 1fr; }
@@ -593,10 +613,10 @@ footer {
       <span>·</span>
       Investigación Formativa
       <span>·</span>
-      2025
+      2026
     </div>
   </div>
-  <div class="hero-scroll">Explorar</div>
+  <a class="hero-scroll" href="#intro-question">Explorar</a>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
@@ -605,15 +625,12 @@ footer {
 <section id="intro">
   <div class="container">
 
-    <div class="wix-guide">
-      <h4>📌 Nota para construcción en Wix</h4>
-      <p>Este documento contiene TODO el contenido del blog listo para copiar. En Wix, usa <code>Editor → Agregar sección</code> para cada bloque. Copia los textos exactamente como aparecen. Las tarjetas de estadísticas puedes recrearlas con el componente <code>Wix Blocks → Stat Box</code>. Los colores principales son: Verde oscuro <code>#1B4332</code>, Verde claro <code>#52B788</code>, Crema <code>#F8FDF9</code>, Dorado <code>#F4A261</code>.</p>
-    </div>
+    <img class="intro-image" src="assets/blog-hero-book.jpg" alt="Libro abierto sobre una mesa de estudio"/>
 
     <div class="intro-grid">
       <div class="intro-text">
         <div class="section-label">Punto de partida</div>
-        <h2 class="section-title">¿Qué es un diseño de investigación?</h2>
+        <h2 id="intro-question" class="section-title">¿Qué es un diseño de investigación?</h2>
 
         <div class="quote-block">
           <p>"El diseño de investigación es el plan o estrategia que se desarrolla para obtener la información que se requiere en una investigación y responder al planteamiento del problema."</p>
@@ -705,7 +722,7 @@ footer {
         <p style="font-size:0.82rem;color:var(--muted);">Ejemplo: determinar si existe relación entre el nivel de implementación de contabilidad ambiental y la reducción de residuos en empresas antioqueñas.</p>
       </div>
       <div class="tipo-card dark">
-        <span class="tipo-tag" style="color:var(--moss);background:rgba(82,183,136,.15);">Longitudinal</span>
+        <span class="tipo-tag" style="color:var(--moss);background:rgba(208,140,96,.16);">Longitudinal</span>
         <h3>De tendencia (Trend)</h3>
         <p>Analiza <strong>cambios a lo largo del tiempo</strong> en una población general. Los datos se recogen en distintos puntos temporales de la misma población (aunque no sean los mismos individuos).</p>
         <p style="font-size:0.82rem;color:var(--light);opacity:0.75;">Ejemplo: analizar la evolución del aprovechamiento de residuos en Medellín entre 2019 y 2024.</p>
@@ -768,7 +785,7 @@ footer {
       </div>
     </div>
 
-    <div style="margin-top:2.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(82,183,136,.2);border-radius:12px;padding:2rem;">
+    <div style="margin-top:2.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(208,140,96,.24);border-radius:12px;padding:2rem;">
       <div class="quote-block" style="background:rgba(255,255,255,.08);border-color:var(--moss);">
         <p>"En la ruta cualitativa, el diseño se refiere al abordaje general que habremos de utilizar en el proceso de investigación. Los diseños cualitativos son más flexibles y abiertos, y su desarrollo va ajustándose a las circunstancias del estudio."</p>
         <cite style="color:var(--light);">— Hernández-Sampieri, R. y Mendoza Torres, C. P. (2018, p. 525)</cite>
@@ -907,25 +924,25 @@ footer {
         <span class="inst-icon">🎙️</span>
         <h4>Entrevista en profundidad</h4>
         <p>Conversación semiestructurada o abierta con el participante. Permite explorar experiencias, percepciones y significados con libertad y profundidad.</p>
-        <span class="tipo-tag" style="color:var(--gold-dk);background:#FFF0E8;">Cualitativo</span>
+        <span class="tipo-tag" style="color:var(--gold-dk);background:#F7E4D7;">Cualitativo</span>
       </div>
       <div class="inst-card">
         <span class="inst-icon">👥</span>
         <h4>Grupos focales</h4>
         <p>Discusión guiada con un grupo pequeño (5-10 personas) sobre un tema específico. Útil para explorar percepciones colectivas y dinámicas de grupo.</p>
-        <span class="tipo-tag" style="color:var(--gold-dk);background:#FFF0E8;">Cualitativo</span>
+        <span class="tipo-tag" style="color:var(--gold-dk);background:#F7E4D7;">Cualitativo</span>
       </div>
       <div class="inst-card">
         <span class="inst-icon">🗒️</span>
         <h4>Observación participante</h4>
         <p>El investigador se integra al contexto estudiado y registra sus observaciones en un diario de campo. Captua la realidad desde adentro.</p>
-        <span class="tipo-tag" style="color:var(--gold-dk);background:#FFF0E8;">Cualitativo</span>
+        <span class="tipo-tag" style="color:var(--gold-dk);background:#F7E4D7;">Cualitativo</span>
       </div>
       <div class="inst-card">
         <span class="inst-icon">📜</span>
         <h4>Análisis de contenido</h4>
         <p>Revisión e interpretación sistemática de textos, documentos, noticias o narrativas para identificar temas, patrones y significados subyacentes.</p>
-        <span class="tipo-tag" style="color:var(--gold-dk);background:#FFF0E8;">Cualitativo</span>
+        <span class="tipo-tag" style="color:var(--gold-dk);background:#F7E4D7;">Cualitativo</span>
       </div>
     </div>
   </div>
@@ -1066,7 +1083,7 @@ footer {
           <div class="vid-type">🔢 Diseño cuantitativo</div>
           <h3>Diseños de investigación cuantitativa — Experimental y no experimental</h3>
           <p>Explicación clara y visual de los tipos de diseños cuantitativos: experimental puro, cuasi-experimental, pre-experimental, transversal y longitudinal. Canal académico en español con ejemplos prácticos.</p>
-          <a href="https://www.youtube.com/results?search_query=dise%C3%B1os+de+investigaci%C3%B3n+cuantitativa+experimental+no+experimental+hernandez+sampieri" target="_blank" class="vid-btn">Ver en YouTube →</a>
+          <a href="https://youtu.be/iwPsmNASGow?si=mxVcnTZvJ_OWbF-h" target="_blank" class="vid-btn">Ver en YouTube →</a>
         </div>
       </div>
       <div class="vid-card">
@@ -1077,7 +1094,7 @@ footer {
           <div class="vid-type">🔢 Diseño cuantitativo</div>
           <h3>Diseños no experimentales: transversal y longitudinal — Ejemplos aplicados</h3>
           <p>Video explicativo sobre los diseños no experimentales, los más usados en ciencias sociales y contables. Diferencia entre diseños transversales (descriptivo y correlacional) y longitudinales con ejemplos concretos.</p>
-          <a href="https://www.youtube.com/results?search_query=dise%C3%B1o+no+experimental+transversal+longitudinal+investigaci%C3%B3n+cuantitativa" target="_blank" class="vid-btn">Ver en YouTube →</a>
+          <a href="https://youtu.be/QGEdwTKDwYI?si=FV_50XfM9_U4htby" target="_blank" class="vid-btn">Ver en YouTube →</a>
         </div>
       </div>
       <div class="vid-card">
@@ -1088,7 +1105,7 @@ footer {
           <div class="vid-type">🔍 Diseño cualitativo</div>
           <h3>Tipos de diseños cualitativos: etnografía, fenomenología, teoría fundamentada</h3>
           <p>Explicación detallada de los cinco diseños cualitativos principales según Hernández-Sampieri (2018): teoría fundamentada, etnográfico, fenomenológico, narrativo e investigación-acción, con ejemplos reales de investigación.</p>
-          <a href="https://www.youtube.com/results?search_query=dise%C3%B1os+cualitativos+fenomenologia+etnografia+teoria+fundamentada+investigacion" target="_blank" class="vid-btn">Ver en YouTube →</a>
+          <a href="https://youtu.be/6bdZ9hgSTMw?si=HargWIlqyLWdpzs_" target="_blank" class="vid-btn">Ver en YouTube →</a>
         </div>
       </div>
       <div class="vid-card">
@@ -1099,16 +1116,12 @@ footer {
           <div class="vid-type">🔍 Diseño cualitativo</div>
           <h3>El estudio de caso como diseño cualitativo — Metodología y aplicación</h3>
           <p>Video sobre el estudio de caso: cuándo usarlo, cómo diseñarlo y cómo analizarlo. Ampliamente utilizado en investigación contable y administrativa. Incluye ejemplos de aplicación en organizaciones colombianas y latinoamericanas.</p>
-          <a href="https://www.youtube.com/results?search_query=estudio+de+caso+investigacion+cualitativa+metodologia+ejemplos+colombia" target="_blank" class="vid-btn">Ver en YouTube →</a>
+          <a href="https://youtu.be/5sK5IW-rpA0?si=-Zr_NPdXB_25F8kh" target="_blank" class="vid-btn">Ver en YouTube →</a>
         </div>
       </div>
     </div>
 
-    <div style="margin-top:2rem;background:rgba(255,255,255,.07);border:1px solid rgba(82,183,136,.2);border-radius:12px;padding:1.5rem 2rem;">
-      <p style="font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--light);line-height:1.7;">
-        <strong style="color:var(--moss);">Nota:</strong> Los enlaces de video llevan a búsquedas específicas en YouTube. Al publicar el blog en Wix, se recomienda buscar y enlazar directamente los videos más recientes y con mayor número de visualizaciones de canales académicos reconocidos como <em>Metodología Fácil</em>, <em>Dr. Jesús Lau</em>, <em>Metodología de la Investigación Paso a Paso</em> u otros canales universitarios verificados.
-      </p>
-    </div>
+    <img class="intro-image" src="assets/videos-note-book.jpg" alt="Libro abierto con un bolígrafo sobre la página"/>
   </div>
 </section>
 
@@ -1119,8 +1132,6 @@ footer {
   <div class="container">
     <div class="section-label">Fuentes citadas</div>
     <h2 class="section-title">Referencias Bibliográficas</h2>
-    <p class="section-sub">Todas las fuentes citadas en este blog, organizadas según las Normas APA 7.ª edición.</p>
-
     <p class="ref-cat">Bibliografía obligatoria del módulo</p>
     <ul class="ref-list">
       <li class="ref-item">
@@ -1153,12 +1164,6 @@ footer {
       </li>
     </ul>
 
-    <p class="ref-cat">Recursos digitales y herramientas de blog</p>
-    <ul class="ref-list">
-      <li class="ref-item">Wix. (s.f.). <em>El líder en la creación de sitios web</em>. <a href="https://es.wix.com" target="_blank">https://es.wix.com</a></li>
-      <li class="ref-item">WordPress. (s.f.). <em>Crea un sitio web o blog</em>. <a href="https://es.wordpress.com" target="_blank">https://es.wordpress.com</a></li>
-      <li class="ref-item">Blogger. (s.f.). <em>Crea un blog atractivo y original</em>. <a href="https://www.blogger.com" target="_blank">https://www.blogger.com</a></li>
-    </ul>
   </div>
 </section>
 
@@ -1167,7 +1172,7 @@ footer {
 ═══════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-logo">Diseños · Investigación</div>
-  <p class="footer-sub">Blog Académico · Metodología de la Investigación · Programa de Contaduría Pública · 2025</p>
+  <p class="footer-sub">Blog Académico · Metodología de la Investigación · Programa de Contaduría Pública · 2026</p>
   <div class="footer-links">
     <a href="#intro">Introducción</a>
     <a href="#cuantitativo">Cuantitativo</a>
@@ -1183,3 +1188,5 @@ footer {
 
 </body>
 </html>
+
+
